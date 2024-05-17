@@ -1,70 +1,85 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Router Nested Routes Exercise
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+This exercise aims to help students get comfortable with using React Router Outlet and nested routes. Students will create a simple React application that displays a list of fruits and their details using nested routes and the Outlet component.
 
-### `npm start`
+## Project Setup
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/turingschool-examples/FruitBox.git
+    ```
 
-### `npm test`
+2. Navigate to the project directory:
+    ```bash
+    cd FruitBox
+    ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Install dependencies:
+    ```bash
+    npm install
+    ```
 
-### `npm run build`
+4. Start the development server:
+    ```bash
+    npm start
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## File Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+src/
+  components/
+    App/
+      App.js
+      App.css
+    Fruits/
+      Fruits.js
+      Fruits.css
+    FruitDetails/
+      FruitDetails.js
+      FruitDetails.css
+  data/
+    fruitData.js
+  index.js
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Exercise Instructions
 
-### `npm run eject`
+### 1. App Component
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+In `App.js`, set up the main structure of the application. Use `NavLink` for navigation and define the routes for the application.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 2. Fruits Component
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+In `Fruits.js`, fetch and display a list of fruits. Each fruit should be a link that navigates to a detailed view of that fruit.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 3. FruitDetails Component
 
-## Learn More
+In `FruitDetails.js`, fetch and display the details of a selected fruit based on the route parameter.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 4. Data
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+In `fruitData.js`, create a function that returns a list of fruits with their details.
 
-### Code Splitting
+### 5. Styling
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Add basic styling in `App.css`, `Fruits.css`, and `FruitDetails.css` to make the application look better.
 
-### Analyzing the Bundle Size
+## Data File
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Create a `fruitData.js` file with the following content:
 
-### Making a Progressive Web App
+```javascript
+export const getFruitsData = () => [
+  { id: '1', name: 'Apple', description: 'A sweet red fruit.', image: '/images/apple.jpg' },
+  { id: '2', name: 'Banana', description: 'A long yellow fruit.', image: '/images/banana.jpg' },
+  { id: '3', name: 'Cherry', description: 'A small red fruit.', image: '/images/cherry.jpg' },
+];
+```
+## Conclusion
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This exercise will guide you through creating a simple application using React Router with nested routes and the Outlet component. You will practice setting up routes, using parameters, and rendering nested content.
